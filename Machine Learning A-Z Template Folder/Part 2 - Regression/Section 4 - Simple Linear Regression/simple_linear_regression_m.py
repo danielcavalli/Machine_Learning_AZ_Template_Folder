@@ -6,13 +6,13 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 
 # Importing the dataset
-dataset = pd.read_csv('data_maior_teste.csv', sep=';')
+dataset = pd.read_csv('Salary_data.csv', sep=',')
 X = dataset.iloc[:, :-1].values # Years of Experience
 y = dataset.iloc[:, 1].values # Salary
 
 # Splitting the dataset into the Training set and Test set
 from sklearn.cross_validation import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.0001, random_state = 0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.33, random_state = 0)
 
 # Feature Scaling
 """from sklearn.preprocessing import StandardScaler
